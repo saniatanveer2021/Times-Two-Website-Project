@@ -1,0 +1,716 @@
+@font-face {
+    font-family: regular;
+    src: url(Fonts/Lay\ Grotest.ttf);
+}
+@font-face {
+    font-family: medium;
+    src: url(Fonts/Lay\ Grotest\ Medium.ttf);
+}
+@font-face {
+    font-family: semiBold;
+    src: url(Fonts/Lay\ Grotest\ Semibold.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: regular;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body.no-scroll{
+    overflow: hidden;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.loader{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    z-index: 95;
+    overflow: hidden;
+    cursor: none;
+    /* cursor: inherit; */
+}
+.loader .preloaderInternalDetails{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: none;
+}
+.preloaderInternalDetails .topBottomX2{
+    height: 100%;
+    width: 100%;
+    padding: 1.8vw 0vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.topBottomX2>#topX2{
+    height: 5%;
+    width: 3%;
+}
+.topBottomX2>#bottomX2{
+    height: 5%;
+    width: 3%;
+}
+.preloaderInternalDetails .leftRightX2{
+    height: 100%;
+    width: 100%;
+    padding: 0vw 2vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.leftRightX2>#left2X{
+    height: 5%;
+    width: 3%;
+}
+.leftRightX2>#right2X{
+    height: 5%;
+    width: 3%;
+}
+.preloaderInternalDetails .centerHeadings{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 1.2vw;
+}
+.centerHeadings .firstHeading{
+    position: relative;
+    height: 2vw;
+    width: 18vw;
+    overflow: hidden;
+}
+.firstHeading h2{
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+#secondHeading{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 0.3vw;
+}
+#secondHeading h2{
+    position: relative;
+    top: 100%;
+}
+#secondHeading .times{
+    width: auto;
+    overflow: hidden;
+}
+#secondHeading .two{
+    width: auto;
+    overflow: hidden;
+}
+.preloaderInternalDetails .svg2X{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+}
+.svg2X #mainCenterX{
+    fill: white;
+    height: 15vh;
+    /* width: 1.6vw; */
+    width: 2vw;
+    position: relative;
+}
+.svg2X #mainCenter2{
+    fill: white;
+    height: 15vh;
+    width: 2.8vw;
+    position: relative;
+}
+.preloaderInternalDetails .menuLoadingLine{
+    height: 0.4%;
+    width: 100vw;
+    background-color: white;
+    position: absolute;
+    bottom: 0vw;
+}
+.customCursor{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    position: fixed;
+    z-index: 90;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    will-change: transform, opacity;
+    border-radius: 50vw;
+}
+.navigation{
+    padding: 2vw 3.1vw;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation .leftButton{
+    height: 3vw;
+    width: 12vw;
+    position: relative;
+    white-space: nowrap;
+    border: 1px solid black;
+    border-radius: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+.leftButton .textCover{
+    height: 25%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textCover .visibleH2{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    white-space: nowrap;
+}
+.visibleH2 h2{
+    font-family: medium;
+    position: relative;
+    font-size: 0.9vw;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+.textCover .hidddenH2{
+    height: auto;
+    width: 5vw;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    overflow: hidden;
+}
+.hidddenH2  span{
+    position: relative;
+    top: 1.3vw;
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+.navigation svg{
+    fill: black;
+    width: 11.3vw;
+    position: relative;
+    top: 0.2vw;
+}
+.navigation .rightButton{
+    height: 3vw;
+    width: 12vw;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    border: 1px solid black;
+    border-radius: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5vw;
+}
+.rightButton .textCover{
+    height: 25%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textCover .marque{
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+.marque .firstText{
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+.firstText h2{
+    font-family: medium;
+    display: inline-block;
+    font-size: 0.9vw;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    animation: buttonTextHorizontalScroll 5s linear infinite;
+}
+@keyframes buttonTextHorizontalScroll {
+    to{
+        transform: translateX(-100%);
+    }
+    from{
+        transform: translateX(0%);
+    }
+}
+.textCover .hiddenText{
+    height: 1vw;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hiddenText span{
+    position: relative;
+    top: 1.3vw;
+    font-size: 0.9vw;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.bottomProjectsLayout{
+    height: 6.8vw;
+    width: 48.5vw;
+    transform-origin: bottom;
+    background-color: #2C2C2C;
+    position: fixed;
+    bottom: 2.1vw;                  /*--------------------------Project Bar Properties---------------------------*/
+    left: 25.8vw;
+    z-index: 80;
+    border-radius: 1.5vw;
+    padding: 0.7vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.3vw;
+    cursor: pointer;
+}
+.bottomProjectsLayout .projectsUpperLayer{
+    height: 6.8vw;
+    width: 48.5vw;
+    padding: 0.7vw;
+    position: absolute;
+    top: 0%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #2C2C2C;
+    cursor: pointer;
+}
+.projectsUpperLayer .brandsImageContainer{
+    height: 100%;
+    width: 12.1%;
+    position: relative;
+    top: 0.5%;
+    border-radius: 16%;
+    overflow: hidden;
+}
+.brandsImageContainer img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16%;
+}
+.brandsImageContainer>#timesTwoIMG{
+    top: 0%;
+}
+.projectsUpperLayer .leftSideDetails{
+    height: 1.6vw;
+    width: 14vw;
+    position: relative;
+    overflow: hidden;
+}
+.leftSideDetails .brandHeadings{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5vw;
+}
+.leftSideDetails>#timesTwoDetails{
+    top: 0%;
+}
+.projectsUpperLayer .handBurgerIcon{
+    height: 100%;
+    width: 15%;
+    position: relative;
+    right: -1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.handBurgerIcon .firstLine{
+    height: 2.3%;
+    width: 22%;
+    background-color: white;
+    margin-bottom: 4.2%;
+}
+.handBurgerIcon>#AnimationIcon{
+    padding: 1.5%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50vw;
+}
+.handBurgerIcon:hover{
+    .firstLine{
+        margin-bottom: 3.5%;
+    }
+    #AnimationIcon{
+        padding: 0%;
+        background-color: white;
+        border: none;
+        border-radius: 0vw;
+    }
+}
+.centerTextContainer .bottomLoadingLine{
+    height: 1.5%;
+    width: 0%;
+    position: relative;
+    top: 7.7%;
+    right: -3.1%;
+    background-color: white;
+    border-radius: 50vw;
+}
+.bottomProjectsLayout .dragBarCover{
+    height: 1.5vw;
+    width: 10vw;
+    position: relative;
+    top: -0.5vw;
+    cursor: grab;
+}
+.dragBarCover .topDragBar{
+    height: 20%;
+    width: 50%;
+    background-color: white;
+    border-radius: 50vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.2s linear;
+}
+.dragBarCover:hover{
+    .topDragBar{
+        width: 80%;
+        cursor: -webkit-grabbing;
+    }
+}
+.bottomProjectsLayout>#timesTwoLogo{
+    width: 19.5%;
+}
+.bottomProjectsLayout .bottomBrandsList{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.bottomBrandsList::-webkit-scrollbar{
+    display: none;
+}
+.bottomBrandsList .timesTwoBrand{
+    height: 6.8vw;
+    width: 48.5vw;
+    background-color: #2C2C2C;
+    padding: 0.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 0.1px solid rgba(255, 255, 255, 0.063);
+    cursor: pointer;
+}
+.timesTwoBrand .leftIMGContainer{
+    height: 100%;
+    width: 11.5%;
+    position: relative;
+    top: 0.5%;
+    border-radius: 16%;
+}
+.leftIMGContainer img{
+    height: 100%;
+    width: 100%;
+    border-radius: 16%;
+    background-size: cover;
+    background-position: center;
+}
+.bottomProjectsLayout .centerTextContainer{
+    height: 100%;
+    width: 89%;
+    position: relative;
+}
+.centerTextContainer .upperSection{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0vw 1.5vw;
+}
+.upperSection .leftSideDetails{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5vw;
+}
+.leftSideDetails h2{
+    font-family: medium;
+    font-size: 1.2vw;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.leftSideDetails .bottomAnimatedText{
+    height: 26%;
+    width: auto;
+    position: relative;
+    text-align: center;
+    color: #858585;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bottomAnimatedText h2{
+    position: relative;
+    font-size: 1.2vw;
+}
+.bottomAnimatedText .bottomHiddenText{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.bottomHiddenText h2{
+    font-size: 1.2vw;
+}
+.bottomBrandsList .letsPartner{
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.063);   
+}
+.bottomBrandsList .brandListFooter{
+    height: 45%;
+    width: 100%;
+    background-color: #2C2C2C;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.brandListFooter .leftContainer{
+    position: relative;
+    padding: 1.8vw 0.9vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.3vw;
+}
+.leftContainer h4{
+    font-weight: 500;
+    font-size: 1.7vw;
+}
+.leftContainer .links{
+    position: relative;
+    color: white;
+}
+.links h5{
+    font-weight: 500;
+    font-size: 0.9vw;
+    letter-spacing: 0.5px;
+    padding-bottom: 0.2vw;
+}
+.links h5:hover{
+    text-decoration: underline;
+}
+.brandListFooter .rightContainer{
+    width: 25vw;
+    position: relative;
+    padding: 0.9;
+}
+.rightContainer .button{
+    height: 2.9vw;
+    width: 10vw;
+    position: relative;
+    top: 8.3vw;
+    left: 13.5vw;
+    border: 1px solid white;
+    border-radius: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button .frontText{
+    height: 25%;
+    width: 100%;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.frontText h5{
+    text-transform: uppercase;
+    font-size: 0.9vw;
+}
+.frontText .hiddenText{
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+}
+.WrapperContainer{
+    position: relative;
+    overflow: hidden;
+}
+.WrapperContainer .page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page1 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.page1 .centerText{
+    height: 1.4vw;
+    width: 100%;
+    position: absolute;
+    top: 48.3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 3.1vw;
+    overflow: hidden;
+}
+.centerText .centerHiddenText{
+    width: auto;
+    position: relative;
+    top: 100%;
+    overflow: hidden;
+}
+.centerHiddenText h2{
+    font-size: 1.2vw;
+    letter-spacing: 0.6px;
+}
+.WrapperContainer .page2{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page2 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page3{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page3 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page4{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page4 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page5{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page5 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page6{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page6 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page7{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page7 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.WrapperContainer .page8{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.page8 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
